@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">primeiro app</string>
+    <string name="bot_o">botão</string>
+    <string name="action_button">action_button</string>
 </resources>
