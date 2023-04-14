@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.primeiroapp.R;
+import com.example.primeiroapp.dao.AlunoDAO;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,11 +20,13 @@ public class ListaAlunosActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_alunos);
+
+        AlunoDAO dao = new AlunoDAO();
+
         setTitle("Lista de alunos");
-        List<String> alunos = new ArrayList<>(
-                Arrays.asList("Alex", "Fran", "Jose", "maria", "josé"));
+
         ListView listaDeAlunos = findViewById(R.id.activity_main_lista_alunos_listview);
-        listaDeAlunos.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, alunos));
+        listaDeAlunos.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, dao.todos()));
     }
 }
 //teste de commit simples
